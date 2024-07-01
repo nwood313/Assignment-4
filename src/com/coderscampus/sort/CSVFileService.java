@@ -5,6 +5,7 @@ import java.util.*;
 
 
 public class CSVFileService {
+
     private String filename;
 
     public CSVFileService(String filename) {
@@ -21,8 +22,9 @@ public class CSVFileService {
                     int grade = Integer.parseInt(data[3]);
                     students.add(new Student(id, data[1], data[2], grade));
                 } catch (NumberFormatException e) {
-                    System.err.println("Your files have been sorted and written, however I'm TRIGGERRED! because NumberFormatException was caught"
+                    System.err.println("Your files have been written and sorted, however I'm TRIGGERRED! because NumberFormatException was caught "
                             + e.getMessage());
+
                 }
             }
         } catch (IOException e) {
@@ -35,7 +37,7 @@ public class CSVFileService {
             String header = "Student ID, Student Name, Course, Grade";
             pw.println(header);
             for (Student student : students) {
-                pw.println(student.id + "," + student.name + "," + student.course + "," + student.grade);
+                pw.println(student.getId() + "," + student.getName() + "," + student.getCourse() + "," + student.getGrade());
             }
         } catch (IOException e) {
             e.printStackTrace();

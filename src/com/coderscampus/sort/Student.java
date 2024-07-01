@@ -7,7 +7,7 @@ public class Student {
     Integer grade;
 
 
-    public int getid() {
+    public int getId() {
         return id;
     }
 

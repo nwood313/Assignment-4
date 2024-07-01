@@ -1,13 +1,15 @@
 package com.coderscampus.sort;
 
+
 import java.io.IOException;
+import java.util.Comparator;
 import java.util.List;
 import java.util.Map;
 import java.util.stream.Collectors;
 
 public class CSVReader {
 
-    public static void main(String[] args) throws IOException {
+    public static void main(String[] args) {
         CSVFileService fileService = new CSVFileService("student masterlist.csv");
         // Read CSV file
         List<Student> students = fileService.readCSV();
@@ -21,7 +23,7 @@ public class CSVReader {
             List<Student> studentsInGeneralCourse = entry.getValue();
 
             // Sort students by grade in descending order
-            studentsInGeneralCourse.sort((s1, s2) -> Integer.compare(s2.getGrade(), s1.getGrade()));
+            studentsInGeneralCourse.sort(Comparator.comparingInt(Student::getGrade).reversed());
 
             fileService.writeCSV(studentsInGeneralCourse, generalCourse + ".csv");
 
@@ -33,4 +35,5 @@ public class CSVReader {
         return fullCourseName.split(" ")[0];
 
     }
+
 }
