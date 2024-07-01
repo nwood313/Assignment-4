@@ -1,17 +1,18 @@
 package com.coderscampus.sort;
 
 public class Student {
-    int studentID;
-    String studentName;
+    Integer id;
+    String name;
     String course;
-    int grade;
+    Integer grade;
 
-    public int getStudentID() {
-        return studentID;
+
+    public int getid() {
+        return id;
     }
 
-    public String getStudentName() {
-        return studentName;
+    public String getName() {
+        return name;
     }
 
     public String getCourse() {
@@ -22,11 +23,11 @@ public class Student {
         return grade;
     }
 
-    Student(int id, String name, String course, int grade) {
-        this.studentID = id;
-        this.studentName = name;
+    public Student(Integer id, String name, String course, Integer grade) {
+        this.id = id;
+        this.name = name;
         this.course = course;
-        this. grade = grade;
-    }
+        this.grade = grade;
 
+    }
 }
