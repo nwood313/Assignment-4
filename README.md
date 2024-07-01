@@ -1,0 +1,1 @@
+I am learning to Code in Java. For this assignment I was asked to read a masterlistCSV file and parse the data contained into 3 files sorted by course and organized by grades obtained in descending order.
